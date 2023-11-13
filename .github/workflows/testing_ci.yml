@@ -1,0 +1,17 @@
+name: Github actions demo 
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest 
+    steps:
+      - name: Set up Python 3.11.5
+        python-version: 3.11.5 
+      - name: Install dependencies
+        run: |
+          make install
+      - name: Lint 
+        run: |
+          make lint
+      - name: Test 
+        run: |
+          make test
