@@ -2,4 +2,4 @@ from hello import add
 
 
 def test_add():
-    assert add(1, 1) == 2
+    assert add(1, 3) == 4
