@@ -22,9 +22,9 @@ steps:
 
 - script: |
     make install
+    pip install  pytest-azurepipelines
   displayName: 'Install dependencies'
 
 - script: |
-    pip install pytest pytest-azurepipelines
     make test
   displayName: 'pytest'
