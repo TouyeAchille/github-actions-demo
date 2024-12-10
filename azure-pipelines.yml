@@ -6,19 +6,16 @@
 trigger:
 - master
 
-pool:
-  vmImage: Default
-
-strategy:
-  matrix:
-    Python310:
-      python.version: '3.10.13'
-
-steps:
-- script: |
-    make install
-  displayName: 'Install dependencies'
-
-- script: |
-    make test
-  displayName: 'pytest'
+stages:
+   - stage: test
+     jobs:
+     - job: local_run
+       pool:
+        vmImage: Default 
+       steps:
+       - script: |
+           make install
+           displayName: 'Install dependencies'
+       - script: |
+           make test
+           displayName: 'pytest'
